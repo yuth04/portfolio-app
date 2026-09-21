@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import {
   ExternalLink,
   FolderCode,
@@ -40,16 +40,16 @@ const containerVariants = {
       staggerChildren: 0.12,
     },
   },
-};
+} as const;
 
-const cardVariants = {
+const cardVariants: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: {
     opacity: 1,
     y: 0,
     transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
   },
-};
+} as const;
 
 export function ProjectsSection() {
   return (
