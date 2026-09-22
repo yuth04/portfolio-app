@@ -31,13 +31,13 @@ export default function AboutSection() {
   }as const;
 
   return (
-    <section className="py-16 md:py-24 max-w-5xl mx-auto px-4">
+    <section className="md:py-24 max-w-5xl mx-auto px-4">
       <motion.div
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
-        className="space-y-12"
+        className="space-y-10"
       >
         {/* Top Header Badge */}
         <motion.div variants={itemVariants} className="text-center space-y-3">

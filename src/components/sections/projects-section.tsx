@@ -53,10 +53,10 @@ const cardVariants: Variants = {
 
 export function ProjectsSection() {
   return (
-    <section id="projects" className="py-20 md:py-28 max-w-7xl mx-auto px-4">
+    <section id="projects" className="md:py-28 max-w-7xl mx-auto px-4">
       {/* Section Header */}
-      <div className="flex flex-col items-start gap-3 mb-12 md:mb-16">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-blue-500/20 bg-blue-50/50 dark:bg-blue-950/30 text-blue-600 dark:text-blue-400 text-xs font-semibold uppercase tracking-wider backdrop-blur-md">
+      <div className="flex flex-col items-center gap-3 mb-10 md:mb-16">
+        <div className="inline-flex gap-2 px-3.5 py-1.5 rounded-full border border-blue-500/20 bg-blue-50/50 dark:bg-blue-950/30 text-blue-600 dark:text-blue-400 text-xs font-semibold uppercase tracking-wider backdrop-blur-md">
           <FolderCode className="w-3.5 h-3.5" />
           <span>Featured Work</span>
         </div>
@@ -83,17 +83,7 @@ export function ProjectsSection() {
             <div>
               {/* Card Header Tag & Quick Links */}
               <div className="flex items-center justify-between mb-5">
-                {/* {project.featured ? (
-                  <span className="inline-flex items-center gap-1.5 text-[11px] font-semibold px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-600 dark:text-blue-400">
-                    <Sparkles className="w-3 h-3" />
-                    Featured
-                  </span>
-                ) : (
-                  <span className="inline-flex items-center gap-1.5 text-[11px] font-medium px-2.5 py-1 rounded-full bg-zinc-100 dark:bg-zinc-800/80 text-zinc-600 dark:text-zinc-400 border border-zinc-200/60 dark:border-zinc-700/60">
-                    <Code2 className="w-3 h-3 text-zinc-400" />
-                    Project
-                  </span>
-                )} */}
+
 
                 <div className="flex items-center gap-1.5 text-zinc-500 dark:text-zinc-400">
                   {project.githubUrl && (

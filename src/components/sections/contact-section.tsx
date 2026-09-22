@@ -28,7 +28,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="text-center py-16 md:py-20 max-w-5xl mx-auto px-4 relative overflow-hidden">
+    <section className="text-center md:py-20 max-w-5xl mx-auto px-4 relative overflow-hidden">
       {/* Subtle Background Glow Accents */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-blue-500/10 dark:bg-blue-600/15 rounded-full blur-3xl pointer-events-none -z-10" />
       <div className="absolute bottom-10 right-10 w-72 h-72 bg-violet-500/10 dark:bg-violet-600/15 rounded-full blur-3xl pointer-events-none -z-10" />
