@@ -25,9 +25,10 @@ export function SmoothScrollProvider({ children }: SmoothScrollProviderProps) {
     <ReactLenis
       ref={lenisRef}
       root
+      autoRaf={false} // Disable Lenis internal RAF loop to prevent double updates
       options={{
-        lerp: 0.1, // Smoothness intensity (lower = smoother/slower, default 0.1)
-        duration: 1.2, // Scroll duration
+        lerp: 0.1,
+        duration: 1.2,
         smoothWheel: true,
         wheelMultiplier: 1,
         touchMultiplier: 2,

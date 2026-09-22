@@ -4,7 +4,9 @@ import React from 'react'
 const HeroPage = () => {
   return (
     <>
+    
       <HeroSection />
+      
     </>
   )
 }

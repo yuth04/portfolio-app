@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import {
   motion,
   useScroll,
@@ -41,12 +41,19 @@ export function DesktopNav({
   const paddingX = useTransform(scrollY, [0, 100], ["1rem", "0.75rem"]);
   const navScale = useTransform(scrollY, [0, 100], [1, 0.98]);
   const logoScale = useTransform(scrollY, [0, 100], [1, 0.92]);
-
+  const router = useRouter();
+  const handleRefresh = (e: React.MouseEvent) => {
+    e.preventDefault();
+    router.push("/");
+    router.refresh();
+  };
   // ScrollSpy logic to detect current section on scroll
   useEffect(() => {
     if (pathname !== "/") return;
 
-    const sectionIds = items.map((item) => getSectionId(item.href)).filter(Boolean);
+    const sectionIds = items
+      .map((item) => getSectionId(item.href))
+      .filter(Boolean);
 
     const handleScroll = () => {
       // Zone threshold placed near 1/3 down the viewport
@@ -79,7 +86,7 @@ export function DesktopNav({
         }}
         className={cn(
           "pointer-events-auto flex items-center justify-between gap-6 rounded-2xl border border-zinc-200/80 dark:border-zinc-800/80 bg-white/80 dark:bg-zinc-950/80 backdrop-blur-xl shadow-lg shadow-zinc-900/5 dark:shadow-none transition-all duration-300 w-full",
-          widthClass
+          widthClass,
         )}
       >
         <motion.div
@@ -95,9 +102,7 @@ export function DesktopNav({
           <motion.div style={{ scale: logoScale }} className="origin-left">
             <Link
               href="/"
-              onClick={() => {
-                if (pathname === "/") setActiveSection("home");
-              }}
+              onClick={handleRefresh}
               className="text-lg font-bold tracking-tight text-zinc-900 dark:text-zinc-100 flex items-center gap-1 hover:opacity-80 transition-opacity pl-1"
             >
               Sek<span className="text-blue-500">.</span>
@@ -118,8 +123,8 @@ export function DesktopNav({
                 pathname === "/"
                   ? activeSection === targetId
                   : item.href === "/"
-                  ? pathname === "/"
-                  : pathname.startsWith(item.href);
+                    ? pathname === "/"
+                    : pathname.startsWith(item.href);
 
               return (
                 <Link
@@ -135,7 +140,7 @@ export function DesktopNav({
                     "relative px-4 py-1.5 text-sm font-medium transition-colors rounded-xl flex items-center justify-center",
                     isActive
                       ? "text-blue-600 dark:text-blue-400 font-semibold"
-                      : "text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100"
+                      : "text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100",
                   )}
                 >
                   {/* Active Indicator Background */}

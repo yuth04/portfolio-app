@@ -10,6 +10,7 @@ export default function HomePage() {
       <ScrollSection id="home">
         <HeroPage />
       </ScrollSection>
+      
       <ScrollSection className="min-h-screen" id="about">
         <AboutPage />
       </ScrollSection>

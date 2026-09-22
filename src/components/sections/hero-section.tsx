@@ -163,7 +163,7 @@ export function HeroSection() {
   const commandText = "npx create-next-app@latest";
 
   return (
-    <section className="relative min-h-[calc(100vh-6rem)] flex items-center justify-center py-16 md:py-20 overflow-hidden bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100">
+    <section className="relative min-h-[calc(100vh-6rem)] flex items-center justify-center md:py-20 overflow-hidden bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100">
       <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] dark:bg-[radial-gradient(#27272a_1px,transparent_1px)] [background-size:24px_24px] opacity-40 -z-10" />
 
       <motion.div
@@ -228,7 +228,7 @@ export function HeroSection() {
                 href="/projects"
                 className="group relative inline-flex items-center justify-center gap-2 rounded-xl bg-zinc-900 dark:bg-zinc-100 px-6 py-3.5 text-sm font-semibold text-zinc-100 dark:text-zinc-900 shadow-xl shadow-zinc-900/10 dark:shadow-zinc-100/10 transition-all"
               >
-                <Sparkles className="w-4 h-4 text-blue-500 dark:text-blue-600" />
+                {/* <Sparkles className="w-4 h-4 text-blue-500 dark:text-blue-600" /> */}
                 Explore Projects
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </motion.a>
@@ -342,6 +342,7 @@ export function HeroSection() {
           </motion.div>
         </motion.div>
       </div>
+      
     </section>
   );
 }

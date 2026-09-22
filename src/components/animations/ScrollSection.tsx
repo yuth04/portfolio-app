@@ -1,48 +1,17 @@
 "use client";
 
-import React, { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { ReactNode } from "react";
 
 interface ScrollSectionProps {
-  children: React.ReactNode;
-  className?: string;
+  children: ReactNode;
   id?: string;
+  className?: string;
 }
 
-export function ScrollSection({
-  children,
-  className = "",
-  id,
-}: ScrollSectionProps) {
-  const sectionRef = useRef<HTMLDivElement>(null);
-
-  // Track the scroll position of each section relative to the viewport
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"],
-  });
-
-  // Smooth scroll transformations for opacity, position, and slight scaling
-  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
-  const y = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [80, 0, 0, -80]);
-  const scale = useTransform(
-    scrollYProgress,
-    [0, 0.2, 0.8, 1],
-    [0.95, 1, 1, 0.95],
-  );
-
+export function ScrollSection({ children, id, className }: ScrollSectionProps) {
   return (
-    <motion.section
-      ref={sectionRef}
-      id={id}
-      style={{
-        opacity,
-        y,
-        scale,
-      }}
-      className={`transition-colors duration-500 ${className}`}
-    >
+    <section id={id} className={className}>
       {children}
-    </motion.section>
+    </section>
   );
 }
